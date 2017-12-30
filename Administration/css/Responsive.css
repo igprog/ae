@@ -1,0 +1,8 @@
+﻿
+
+@media (max-width:701px){section {width:95%; padding:5px !important}}
+@media (max-width:701px){.apartmentsNav {display:block !important}}
+@media (max-width:701px){.loginForm {margin: 5% !important}}
+@media (max-width:701px){.calendar {width: 100% !important}}
+
+@media (max-width:400px){.boxShadow {box-shadow: 0px 0px 0px Transparent !important}}

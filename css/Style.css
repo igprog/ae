@@ -1,0 +1,174 @@
+﻿
+body, html 
+{
+padding:0 ; margin: 0;
+}
+
+footer
+{
+    background-color: Menu;
+    padding: 20px;
+    margin-top: 20px;
+    text-align:left;
+}
+
+p
+{
+    text-align:justify;
+}
+
+section
+{
+  margin:0 auto;
+  width: 50%;
+  padding-top:30px;
+  text-align: left; 
+  min-height: 500px;
+  font-size: 0.9em;
+   
+}
+
+table
+{
+  /*  width: 100%; 
+    text-align: center;*/
+}
+
+td
+{
+  /*  border: 1px solid Menu;*/
+}
+
+
+.ddlLanguageSelector
+{
+    float:right;
+    background-color: transparent;
+    color: Silver;
+    margin: 15px 10px 5px 0px;
+    border:0;
+}
+
+
+.languageSelector
+{
+    background-color: transparent;
+    border: none;
+}
+
+.divLanguageSelector
+{
+    color: #0099cc;
+    text-align: right;
+    padding: 10px 50px 0px 0px;
+    font-weight:600;
+}
+
+.apartmentsNav
+{
+    text-decoration: none;
+    margin: 0;
+    padding: 10px;
+    display: inline;
+}
+
+.apartmentsNav:hover
+{
+    cursor: pointer;
+    background-color: silver;
+}
+
+.apartmentsNavActive
+{
+    background-color: silver;
+}
+
+.divAp
+{
+    padding: 20px 0px 20px 0px;
+}
+
+.calendarHearder
+{
+    background-color: Menu;
+    text-align: center;
+    padding: 5px;
+    width: 80px;
+}
+
+.calendar
+{
+    text-align: center;
+    padding: 5px;
+    border: solid 1px Menu;
+}
+
+.boxShadow
+{
+    box-shadow: 1px 1px 10px Silver;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.footerLinks
+{
+    height: 100px;
+    text-align: center;
+}
+
+.img-floatRight
+{
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.img-floatLeft
+{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+
+.divDistances
+{
+    width: 60%;
+}
+
+.sectionNoBanner
+{
+    width: 80%;
+    padding-top:150px;
+}
+
+.topNav
+{
+    color:White !Important;
+    padding-left: 10px !Important;
+    padding-right: 10px !Important;
+}
+
+.topNav:hover
+{
+    background-color: White !Important;
+    color: Black !Important;
+}
+
+.googleMapConteiner
+{
+    padding:30px 20px 20px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

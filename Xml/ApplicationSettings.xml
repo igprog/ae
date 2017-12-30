@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationSettings>
+  <ActiveLanguage>English</ActiveLanguage>
+  <Info>
+    <Name>Elvira Gašparović</Name>
+    <Address>Jardula 26</Address>
+    <PostalCode>21322</PostalCode>
+    <City>Brela</City>
+    <Country>Croatia</Country>
+    <Tel>+385 21 618 329</Tel>
+    <GSM>+385 98 948 08 26</GSM>
+    <AdditionalGSM1></AdditionalGSM1>
+    <Site>www.apartmentselvira.com</Site>
+    <SiteURL>http://www.apartmentselvira.com</SiteURL>
+    <MyEmail>jardula@yahoo.com</MyEmail>
+    <Email>igprog@yahoo.com</Email>
+    <EmailPassword>Jardula26</EmailPassword>
+    <ServerPort>587</ServerPort>
+    <ServerHost>smtp.mail.yahoo.com</ServerHost>
+    <AdditionalMail1></AdditionalMail1>
+    <AdditionalMail2></AdditionalMail2>
+    <AdditionalMail3></AdditionalMail3>
+    <Iban></Iban>
+    <SwiftCode></SwiftCode>
+  </Info>
+  <SiteContent>
+    <SiteTitle></SiteTitle>
+    <SiteShortDescription></SiteShortDescription>
+    <SiteLongDescription>
+    </SiteLongDescription>
+  </SiteContent>
+  <Settings>
+    <HrkEurRate>7.56</HrkEurRate>
+  </Settings>
+</ApplicationSettings>
