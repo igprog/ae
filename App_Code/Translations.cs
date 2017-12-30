@@ -31,26 +31,25 @@ namespace IGPROG
      
         public Translations SelectTranslation(string siteTitleId, string lang)
         {
-            
-            Translations translation = new Translations();
-            Properties properties = new Properties();
-            SqlConnection connection = new SqlConnection(properties.ConnectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand(
-                "SELECT * FROM Translations WHERE TranslationId = @SiteTitleId", connection);
-            
-            command.Parameters.Add(new SqlParameter("SiteTitleId", siteTitleId));
+                Translations translation = new Translations();
+                Properties properties = new Properties();
+                SqlConnection connection = new SqlConnection(properties.ConnectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand(
+                    "SELECT * FROM Translations WHERE TranslationId = @SiteTitleId", connection);
 
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-              //  string croatian = reader.GetString(GetActiveLanguage(lang));
-                translation.Result = reader.GetString(GetActiveLanguage(lang));
-            }
-            
-            connection.Close();
+                command.Parameters.Add(new SqlParameter("SiteTitleId", siteTitleId));
 
-            return translation;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    //  string croatian = reader.GetString(GetActiveLanguage(lang));
+                    translation.Result = reader.GetString(GetActiveLanguage(lang));
+                }
+
+                connection.Close();
+
+                return translation;
         }
 
         private Int32 GetActiveLanguage(string lang)

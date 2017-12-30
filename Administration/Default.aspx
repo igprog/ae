@@ -19,7 +19,7 @@
   
          <asp:Label ID="lblTest" runat="server" Text=""></asp:Label>
     
-     <h3>Villa Mili</h3>
+     <h3>Apartments Elvira</h3>
 <%--<div style="border-bottom-style:solid">    
 <h4 class="translations">Prijevodi tekstova</h4>
 <label>TekstId: </label>
