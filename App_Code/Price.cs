@@ -25,6 +25,7 @@ public class Price : System.Web.Services.WebService {
         public double total { get; set; }
         public double deposit { get; set; }
         public double restToPay { get; set; }
+        public string message { get; set; }
     }
 
     [WebMethod]
@@ -37,13 +38,14 @@ public class Price : System.Web.Services.WebService {
         x.total = 0;
         x.deposit = 0;
         x.restToPay = 0;
+        x.message = null;
         return JsonConvert.SerializeObject(x, Formatting.Indented);
     }
 
      [WebMethod]
     public string GetPrice(NewPrice d) {
+        NewPrice x = new NewPrice();
         try {
-            NewPrice x = new NewPrice();
             x.dateFrom = d.dateFrom;
             x.dateTo = d.dateTo;
             x.apartment = d.apartment;
@@ -55,11 +57,12 @@ public class Price : System.Web.Services.WebService {
                     x.total += 50 + (d.apartment == 3 ? 0 : 10);
                 }
             }
-            x.deposit = Math.Round((x.total * 0.1),0);
+            x.deposit = (Math.Round(((x.total * 0.1) / 10), 0))*10;
             x.restToPay = x.total - x.deposit;
             return JsonConvert.SerializeObject(x, Formatting.Indented);
         } catch(Exception e) {
-            return (JsonConvert.SerializeObject(e.Message, Formatting.Indented));
+            x.message = e.Message;
+            return (JsonConvert.SerializeObject(x, Formatting.Indented));
         }
     }
 

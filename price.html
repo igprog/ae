@@ -8,46 +8,77 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <style>
+        .m-10 {
+            margin: 10px;
+        }
+    </style>
+
 </head>
 <body ng-app="price" ng-controller="priceCtrl">
     <div class="container">
-        <h1>Apartments Elvira - Price</h1>
+        <h3>Apartments Elvira - Price</h3>
         <div class="row">
-            <label class="col-sm-2">From</label>
-            <div class="col-sm-4">
-                <input ng-model="d.dateFrom" type="text" class="form-control" />
+            <div class="col-sm-6">
+                <div class="row m-10">
+                    <label class="col-sm-4">From</label>
+                    <div class="col-sm-8">
+                        <input ng-model="d.dateFrom" type="text" class="form-control" ng-change="getPrice(d)" />
+                    </div>
+                </div>
+                <div class="row m-10">
+                    <label class="col-sm-4">To</label>
+                    <div class="col-sm-8">
+                        <input ng-model="d.dateTo" type="text" class="form-control" ng-change="getPrice(d)" />
+                    </div>
+                </div>
+                <div class="row m-10">
+                    <label class="col-sm-4">Apartment</label>
+                    <div class="col-sm-8">
+                        <select ng-model="d.apartment" class="form-control"  ng-click="getPrice(d)">
+                            <option ng-value="1">A1</option>
+                            <option ng-value="2">A2</option>
+                            <option ng-value="3">A3</option>
+                        </select>
+                    </div>
+                </div>
+                <div ng-if="d.message!=null" class="alert alert-danger">
+                    {{d.message}}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <label class="col-sm-2">To</label>
-            <div class="col-sm-4">
-                <input ng-model="d.dateTo" type="text" class="form-control" />
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-sm-2">Apartment</label>
-            <div class="col-sm-4">
-                <input ng-model="d.apartment" type="text" class="form-control" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <button ng-click="getPrice(d)" class="btn btn-success">Get Price</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4" style="margin:20px; padding:10px; border:solid 2px gray">
-                Arrival: {{d.dateFrom}} <br />
-                Departure: {{d.dateTo}} <br />
-                Days: {{d.days}} <br />
-                Total: {{d.total}} &#8364; <br />
-                Deposit: {{d.deposit}} &#8364; <br />
-                Rest to pay in Brela: {{d.restToPay}} &#8364;
-            </div>
-        </div>
+            <div class="col-sm-6">
+                <textarea id="txtArea" rows="25" style="width:100%" ng-click="select()">
+Hello,
+We have available apartment A{{d.apartment}} in period from {{d.dateFrom}} to {{d.dateTo}}.
 
-        <pre>{{d}}</pre>
+Booking details:
+    -------------------------------------------------------------
+    Apartment: A{{d.apartment}}
+    Arrival: {{d.dateFrom}}; 12:00
+    Departure: {{d.dateTo}}; 10:00
+    Days: {{d.days}}
+    Total: {{d.total}} &#8364;
+    Deposit: {{d.deposit}} &#8364;
+    Rest to pay in Brela: {{d.restToPay}} &#8364;
+    -------------------------------------------------------------
+
+If you want to book this apartment, please pay an advance {{d.deposit}} &#8364; on the account:
+    -------------------------------------------------------------
+    IBAN: HR14 2340 0093 1024 4506 7
+    SWIFT (BIC): PBZGHR2X
+    Bank: Privredna banka Zagreb d.d.,Rackoga 6, 10000 Zagreb, RH
+    Name: Elvira Gašparović
+    Address: Jardula 26, 21322 Brela, Croatia
+    -------------------------------------------------------------
+
+Best regards
+
+Igor
+                </textarea>
+            </div>
+        </div>
+        <!--<pre>{{d}}</pre>-->
     </div>
    
     <script>
@@ -81,6 +112,10 @@
                    alert(response.data.d);
                });
             };
+
+            $scope.select = function () {
+                document.getElementById("txtArea").select();
+            }
 
         }]);
     </script>
