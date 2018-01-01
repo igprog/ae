@@ -18,7 +18,8 @@
 </head>
 <body ng-app="price" ng-controller="priceCtrl">
     <div class="container">
-        <h3>Apartments Elvira - Price</h3>
+        <h4><a href="../Index.aspx" target="_blank" style="text-decoration: none">Apartmani Elvira</a></h4>
+        <a class="btn btn-primary m-10" href="BrowseBooking.aspx">Pregled rezervacija</a>
         <div class="row">
             <div class="col-sm-6">
                 <div class="row m-10">
@@ -50,6 +51,7 @@
             <div class="col-sm-6">
                 <textarea id="txtArea" rows="25" style="width:100%" ng-click="select()">
 Hello,
+
 We have available apartment A{{d.apartment}} in period from {{d.dateFrom}} to {{d.dateTo}}.
 
 Booking details:
@@ -86,7 +88,7 @@ Igor
         app.controller('priceCtrl', ['$scope', '$http', function ($scope, $http) {
             var init = function () {
                 $http({
-                    url: 'Price.asmx/Init',
+                    url: '../Price.asmx/Init',
                     method: 'POST',
                     data: { }
                 })
@@ -101,7 +103,7 @@ Igor
 
             $scope.getPrice = function (d) {
                 $http({
-                    url: 'Price.asmx/GetPrice',
+                    url: '../Price.asmx/GetPrice',
                     method: 'POST',
                     data: { d: d }
                 })

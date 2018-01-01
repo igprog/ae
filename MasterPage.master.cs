@@ -57,6 +57,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         ddlLanguageSelector.Items.Add(new ListItem("DE", "de"));
         ddlLanguageSelector.SelectedValue = GetActiveLanguage();
 
+
     }
 
 

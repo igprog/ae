@@ -22,14 +22,11 @@
     <h2 style="margin: 0; padding: 0"><a href="../Index.aspx" target="_blank" style="text-decoration: none">Apartmani Elvira</a></h2>
     <label>Administracija</label>
     <br />
-   <%-- <a href="Default.aspx">Naslovna</a> |--%> 
     <a class="btn btn-success" href="NewBooking.aspx">Nova rezervacija</a>
     <a class="btn btn-success" href="BrowseBooking.aspx">Pregled rezervacija</a>
     <a class="btn btn-success" href="EditBooking.aspx">Uredi rezervacije</a>
-   <%-- <a href="EditLinks.aspx">Edit Links</a> |
-    <a href="EditGallery.aspx">Edit Gallery</a> |--%>
     <a id="editTranslations" runat="server" class="btn btn-success" href="EditTranslations.aspx">Prijevodi</a>
- <%--   <a href="EditUsers.aspx">Edit Users</a>  |--%>
+    <a class="btn btn-success" href="price.html">Ponuda</a>
         <asp:Button CssClass="btn btn-default" ID="btnLogOut" runat="server" Text="Odjava" 
             onclick="btnLogOut_Click" />
 
