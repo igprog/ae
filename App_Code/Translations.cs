@@ -29,27 +29,24 @@ namespace IGPROG
         public string Result { get; set; }
         public string SiteTitleId { get { return _SiteTitleId; } }
      
-        public Translations SelectTranslation(string siteTitleId, string lang)
-        {
+        public Translations SelectTranslation(string siteTitleId, string lang) {
+            try {
                 Translations translation = new Translations();
                 Properties properties = new Properties();
                 SqlConnection connection = new SqlConnection(properties.ConnectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand(
                     "SELECT * FROM Translations WHERE TranslationId = @SiteTitleId", connection);
-
                 command.Parameters.Add(new SqlParameter("SiteTitleId", siteTitleId));
-
                 SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    //  string croatian = reader.GetString(GetActiveLanguage(lang));
+                while (reader.Read()) {
                     translation.Result = reader.GetString(GetActiveLanguage(lang));
                 }
-
                 connection.Close();
-
                 return translation;
+            } catch(Exception e) {
+                return new Translations();
+            }
         }
 
         private Int32 GetActiveLanguage(string lang)
