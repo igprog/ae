@@ -12,9 +12,9 @@
     <AdditionalGSM1></AdditionalGSM1>
     <Site>www.apartmentselvira.com</Site>
     <SiteURL>http://www.apartmentselvira.com</SiteURL>
-    <MyEmail>jardula@yahoo.com</MyEmail>
+    <MyEmail>gasparovic.elvira@gmail.com</MyEmail>
     <Email>igprog@yahoo.com</Email>
-    <EmailPassword>A...k</EmailPassword>
+    <EmailPassword>ArsenErik</EmailPassword>
     <ServerPort>587</ServerPort>
     <ServerHost>smtp.mail.yahoo.com</ServerHost>
     <AdditionalMail1></AdditionalMail1>
@@ -30,6 +30,6 @@
     </SiteLongDescription>
   </SiteContent>
   <Settings>
-    <HrkEurRate>7.56</HrkEurRate>
+    <HrkEurRate>7.42</HrkEurRate>
   </Settings>
 </ApplicationSettings>
