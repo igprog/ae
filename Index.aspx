@@ -5,26 +5,26 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     <div class="container marketing lead">
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" />
         <div class="row featurette">
             <div class="col-md-12">
-                <img class="img-floatRight" alt="image" src="imgGallery/04.jpg">
+                <img class="img-floatRight" alt="image" src="imgGallery/04.jpg" />
                 <asp:Literal ID="litMainDescription" runat="server"></asp:Literal>
             </div>
         </div>
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" />
         <div class="row featurette">
             <div class="col-md-12">
                 <img class="img-floatLeft" data-src="holder.js/500x500/auto" alt="Generic placeholder image"
-                    src="imgGallery/03.jpg">
+                    src="imgGallery/03.jpg" />
                 <asp:Literal ID="litHomeDescription" runat="server"></asp:Literal>
             </div>
         </div>
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" />
         <div class="row featurette">
             <div class="col-md-12">
                 <img class="img-floatRight" data-src="holder.js/500x500/auto" alt="Generic placeholder image"
-                    src="imgGallery/11.jpg">
+                    src="imgGallery/11.jpg" />
                 <asp:Literal ID="litApartmentsDescription" runat="server"></asp:Literal>
             </div>
         </div>
@@ -43,7 +43,7 @@
   ga('create', 'UA-47317436-5', 'auto');
   ga('send', 'pageview');
 
-</script>
+    </script>
 
     
 

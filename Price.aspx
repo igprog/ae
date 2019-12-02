@@ -32,7 +32,7 @@
              <tr>
                 <td style="background-color:#c2d6d6">A1
                 </td>
-                <td>40€
+                <td>50€
                 </td>
                 <td>60€
                 </td>
@@ -42,7 +42,7 @@
              <tr>
                 <td style="background-color:#c2d6d6">A2
                 </td>
-                <td>40€
+                <td>50€
                 </td>
                 <td>60€
                 </td>
@@ -52,11 +52,11 @@
             <tr>
                 <td style="background-color:#c2d6d6">A3
                 </td>
-                <td>40€
-                </td>
                 <td>50€
                 </td>
-                <td>80€
+                <td>60€
+                </td>
+                <td>90€
                 </td>
             </tr>
          <%--   <tr>
