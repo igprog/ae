@@ -50,21 +50,21 @@ namespace IGPROG
                 mailMessage.To.Add(sendToEmail);    //Mail na koji se salje poruka
                 
                 //Dodatni mail na koji se salje poruka ako se mail šalje meni
-                if (Email == sendToEmail)
-                {
-                    if (additionalMail1 != null)
+                //if (Email == sendToEmail)
+                //{
+                    if (!string.IsNullOrEmpty(additionalMail1))
                     {
                         mailMessage.To.Add(additionalMail1);
                     }
-                    if (additionalMail2 != null)
+                    if (!string.IsNullOrEmpty(additionalMail2))
                     {
                         mailMessage.To.Add(additionalMail2);
                     }
-                    if (additionalMail3 != null)
+                    if (!string.IsNullOrEmpty(additionalMail3))
                     {
                         mailMessage.To.Add(additionalMail3);
                     }
-                }
+                //}
 
                 mailMessage.From = new MailAddress(Email);   //Moj mail sa koje se salje poruka b(igprog@yahoo.com)
                 mailMessage.Subject = messageSubject;

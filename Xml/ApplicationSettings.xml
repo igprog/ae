@@ -17,14 +17,14 @@
     <EmailPassword>Yip6****1$</EmailPassword>
     <ServerPort>587</ServerPort>
     <ServerHost>smtp.mail.yahoo.com</ServerHost>
-    <AdditionalMail1></AdditionalMail1>
+    <AdditionalMail1>igprog@yahoo.com</AdditionalMail1>
     <AdditionalMail2></AdditionalMail2>
     <AdditionalMail3></AdditionalMail3>
     <Iban></Iban>
     <SwiftCode></SwiftCode>
   </Info>
   <SiteContent>
-    <SiteTitle></SiteTitle>
+    <SiteTitle>Apartments Elvira</SiteTitle>
     <SiteShortDescription></SiteShortDescription>
     <SiteLongDescription>
     </SiteLongDescription>

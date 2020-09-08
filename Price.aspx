@@ -22,42 +22,31 @@
             <tr style="background-color: Menu">
                 <td style="vertical-align: middle; background-color:#c2d6d6"><label id="apartment" runat="server"></label>
                 </td>
-                <td>1.10.-31.5.
-                </td>
-                <td>1.6.-30.6.<br />1.9.-30.9.
-                </td>
-                <td>1.7.-31.8.
-                </td>
+                <td>15.9.-1.6.</td>
+                <td>1.6.-15.6.<br />1.9.-15.9.</td>
+                <td>15.6.-1.7.<br />25.8.-1.9</td>
+                <td>1.7.-25.8.</td>
             </tr>
              <tr>
-                <td style="background-color:#c2d6d6">A1
-                </td>
-                <td>50€
-                </td>
-                <td>60€
-                </td>
-                <td>90€
-                </td>
+                <td style="background-color:#c2d6d6">A1</td>
+                <td>50€</td>
+                <td>60€</td>
+                <td>70€</td>
+                 <td>90€</td>
             </tr>
              <tr>
-                <td style="background-color:#c2d6d6">A2
-                </td>
-                <td>50€
-                </td>
-                <td>60€
-                </td>
-                <td>90€
-                </td>
+                <td style="background-color:#c2d6d6">A2</td>
+                <td>50€</td>
+                <td>60€</td>
+                <td>70€</td>
+                 <td>90€</td>
             </tr>
             <tr>
-                <td style="background-color:#c2d6d6">A3
-                </td>
-                <td>50€
-                </td>
-                <td>60€
-                </td>
-                <td>90€
-                </td>
+                <td style="background-color:#c2d6d6">A3</td>
+                <td>50€</td>
+                <td>60€</td>
+                <td>70€</td>
+                <td>90€</td>
             </tr>
          <%--   <tr>
                 <td style="background-color:#c2d6d6">A4
