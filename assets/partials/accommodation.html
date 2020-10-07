@@ -1,0 +1,79 @@
+﻿<div>
+    <!-- ================ start banner area ================= -->
+    <section class="contact-banner-area" id="contact">
+        <div class="container h-100">
+            <div class="contact-banner">
+                <div class="text-center">
+                    <h1>Accomodation</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Accomodation</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+    <ng-include ng-if="g.apartment==='a0'" src="'../assets/partials/apartments.html'"></ng-include>
+
+    <!-- ================ Explore section start ================= -->
+    <section ng-if="g.apartment!=='a0'" class="mt-5 section-margin--small">
+        <div class="container">
+            <div class="section-intro pb-80px">
+                <div class="text-center pb-3">
+                    <div class="section-intro__style">
+                        <img src="../assets/img/home/bed-icon.png" alt="">
+                    </div>
+                    <h2></h2>
+                    <h2>Apartment <span class="text-uppercase">{{d.currApartment.code}}</span></h2>
+                    <h5>{{d.currApartment.area}}m² | {{d.currApartment.floor}}</h5>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <table>
+                                <tr>
+                                    <td><i class="fa fa-bed fa-2x"></i></td>
+                                    <td class="pl-2">{{d.currApartment.beds}} beds</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-snowflake fa-2x"></i></td>
+                                    <td class="pl-2">A/C</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-wifi fa-2x"></i></td>
+                                    <td class="pl-2">Wi-Fi</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-water fa-2x"></i></td>
+                                    <td class="pl-2">Sea view</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="lead text-justify pt-2">{{d.currApartment.longdesc}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col-md-6 col-xl-4 mb-5" ng-repeat="x in d.currApartment.images">
+                    <div class="card card-explore">
+                        <div>
+                            <img class="card-img" src="../assets/img/accommodation/{{d.currApartment.code}}/{{x}}" alt="{{x}}" title="{{x}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a class="card-explore__link" href="" ng-click="goBooking(d.currApartment.code, null, null, 0, 0)">Book Now <i class="ti-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ================ Explore section end ================= -->	
+
+
+</div>

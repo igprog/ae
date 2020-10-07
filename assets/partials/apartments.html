@@ -1,0 +1,25 @@
+﻿<section class="section-margin">
+    <div class="container">
+        <div class="section-intro text-center pb-80px">
+            <div class="section-intro__style">
+                <img src="../assets/img/home/bed-icon.png" alt="">
+            </div>
+            <h2>Explore Our Apartments</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" ng-repeat="x in d.accommodation">
+                <div class="card card-explore">
+                    <div class="card-explore__img">
+                        <img class="card-img" src="../assets/img/home/explore{{x.ap}}.png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-explore__price">{{x.pricerange}} <sub>/ Per Night</sub></h3>
+                        <h4 class="card-explore__title"><a href="" ng-click="goApartment(x.ap)">Apartment <span class="text-capitalize">{{x.code}}</span></a></h4>
+                        <p>{{x.shortdesc}} </p>
+                        <a class="card-explore__link" href="" ng-click="goBooking(x.code, null, null, 0, 0)">Book Now <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+﻿<div>
+    <!-- ================ start banner area ================= -->
+    <section class="contact-banner-area" id="contact">
+        <div class="container h-100">
+            <div class="contact-banner">
+                <div class="text-center">
+                    <h1>Calendar</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Calendar</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+    <section class="mt-5 mb-5">
+        <div class="container-fluid p-5">
+            <div class="text-center">
+                <h2>Calendar</h2>
+                <h3>{{config.year}}</h3>
+            </div>
+            <hr />
+            <div>
+                <p>
+                    <div style="display:inline-block; width:30px; height:30px; border:1px solid gray; background-color: #8d8"></div><span class="p-2">*Reserved</span>
+                </p>
+                <p>
+                    <div style="display:inline-block; width:30px; height:30px; border:1px solid gray; background-color: #fff"></div><span class="p-2">*Available</span>
+                </p>
+            </div>
+            <div id="timeline" style="height: 180px;min-width:1500px" class="pr-2"></div>
+        </div>
+    </section>
+    <json-directive data="d" debug="config.debug" desc="'d'"></json-directive>
+    <json-directive data="g" debug="config.debug" desc="'g'"></json-directive>
+</div>
+
+<style>
+   svg g:first-of-type path {
+    stroke: #e6e6e6;
+}
+svg g:first-of-type rect:not(:last-child) {
+    fill: #ffffff;
+}
+</style>

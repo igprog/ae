@@ -1,0 +1,89 @@
+﻿<div>
+    <!-- ================ start banner area ================= -->
+    <section class="contact-banner-area" id="contact">
+        <div class="container h-100">
+            <div class="contact-banner">
+                <div class="text-center">
+                    <h1>Contact Us</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <h2>Contact</h2>
+            <hr />
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-home"></i></span>
+                        <div class="media-body">
+                            <h3>{{d.info.name}}</h3>
+                            <p>{{d.info.address}}, {{d.info.postalcode}} {{d.info.city}} - {{d.info.country}}</p>
+                        </div>
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-headphone"></i></span>
+                        <div class="media-body">
+                            <h3><a href="tel:{{d.info.phone}}">{{d.info.phone}}</a></h3>
+                            <p>Mon to Sun 9am to 8pm</p>
+                        </div>
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-email"></i></span>
+                        <div class="media-body">
+                            <h3><a href="mailto:{{d.info.email}}">{{d.info.email}}</a></h3>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                    <form ng-hide="sending" ng-if="!d.contact.response.isSent" class="row contact_form" id="contactForm"
+                          novalidate="novalidate">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input ng-model="d.contact.name" type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                <span ng-show="!validation.name" class="text-danger">Name is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="d.contact.email" type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                <span ng-show="!validation.email" class="text-danger">Email is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="d.contact.subject" type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea ng-model="d.contact.msg" class="form-control different-control" name="message" id="message" rows="5" placeholder="Enter Message"></textarea>
+                                <span ng-show="!validation.msg" class="text-danger">Message is required.</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="button-contact" ng-click="send(d.contact)"><span>Send Message</span></button>
+                        </div>
+                    </form>
+                    <div ng-if="sending" class="text-center p-5">
+                        <i class="fa fa-circle-notch fa-spin fa-5x"></i>
+                        <p>Sending...</p>
+                    </div>
+                    <div ng-if="d.contact.response.isSent" class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{d.contact.response.msg}}</h5>
+                            <p class="card-text">{{d.contact.response.msg1}}.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <json-directive data="d" debug="config.debug"></json-directive>
+</div>

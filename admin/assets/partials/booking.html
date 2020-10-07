@@ -1,0 +1,117 @@
+﻿<div ng-if="g.isLogin" class="container-fluid">
+    <h3>Rezervacije</h3>
+    <hr />
+    <div class="small">
+        <p>
+            <div style="display:inline-block; width:15px; height:15px; border:1px solid gray; background-color: #8d8"></div><em class="p-2">*Rezervirano</em>
+        </p>
+        <p>
+            <div style="display:inline-block; width:15px; height:15px; border:1px solid gray; background-color: #f56c6c"></div><em class="p-2">*Upit</em>
+        </p>
+        <p>
+            <div style="display:inline-block; width:15px; height:15px; border:1px solid gray; background-color: #ffd"></div><em class="p-2">*Slobodno</em>
+        </p>
+    </div>
+    <div id="timeline" style="height:280px;min-width:1500px" class="pr-2"></div>
+    <div>
+        <form>
+            <div>Godina</div>
+            <select ng-model="year" ng-options="x for x in years" class="form-control" style="width:100px" ng-change="load(year)"></select>
+        </form>
+    </div>
+    <div class="teble-responsive">
+        <table class="table table-hover table-borderless">
+            <tr class="border-bottom">
+                <th></th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Email</th>
+                <th>Dolazak</th>
+                <th>Odlazak</th>
+                <th>Apartman</th>
+                <th>Odraslih</th>
+                <th>Djece</th>
+                <th>Cijena ukupno</th>
+                <th>Akontacija</th>
+                <th>Potvrđeno</th>
+                <th>Napomena</th>
+                <th colspan="2"></th>
+            </tr>
+            <tr ng-repeat="x in d track by $index" style="color:{{x.confirmed?'':'#f56c6c'}}">
+                <td><button class="btn btn-outline-primary btn-circle" ng-click="edit(x, $index)" title="Uredi"><i class="fa fa-edit"></i></button></td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.firstName}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.firstName" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.lastName}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.lastName" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.email}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.email" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.arrival | date:'dd.MM.yyyy'}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.arrival" class="form-control" type="date">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.departure | date:'dd.MM.yyyy'}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.departure" class="form-control" type="date">
+                </td>
+                <td>
+                    <!--<div ng-if="!x.isEdit" class="form-check form-check-inline" ng-repeat="y in accommodation">
+                        <input ng-disabled="!x.isEdit" ng-checked="x.apartment.includes(y.ap.toString())" class="form-check-input" type="checkbox" id="{{y.ap}}_{{x.id}}" value="{{x.apartment.includes(y.ap.toString())}}">
+                        <label class="form-check-label" for="{{y.ap}}_{{x.id}}"><span class="text-uppercase">{{y.code}}</span></label>
+                    </div>-->
+                    <span ng-if="!x.isEdit">{{x.apartment}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.apartment" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.adult}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.adult" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.child}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.child" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.totPrice}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.totPrice" class="form-control">
+                </td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.deposit}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.deposit" class="form-control">
+                </td>
+                <td><input ng-disabled="!x.isEdit" ng-model="x.confirmed" type="checkbox" class="form-control" /></td>
+                <td>
+                    <span ng-if="!x.isEdit">{{x.note}}</span>
+                    <input ng-if="x.isEdit" ng-model="x.note" class="form-control">
+                </td>
+                <td ng-if="x.isEdit"><button class="btn btn-outline-success btn-circle" ng-click="update(x)" title="Spremi"><i class="fa fa-save"></i></button></td>
+                <td ng-if="x.isEdit"><button class="btn btn-outline-danger btn-circle" ng-click="remove(x.id)" title="Briši"><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </table>
+        <div>
+            <button class="btn btn-outline-success btn-circle" ng-click="add()" title="Nova rezervacija"><i class="fa fa-plus"></i>Nova rezervacija</button>
+        </div>
+    </div>
+    <json-directive data="calendar" desc="'calendar'" debug="config.debug"></json-directive>
+    <json-directive data="accommodation" desc="'accommodation'" debug="config.debug"></json-directive>
+</div>
+
+<!--Fixed Table Header-->
+<style>
+    table {
+        text-align: left;
+        position: relative;
+        border-collapse: collapse;
+    }
+    th {
+        background: white;
+        position: sticky;
+        top: 0; /* Don't forget this, required for the stickiness */
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+</style>
+<!--Fixed Table Header-->

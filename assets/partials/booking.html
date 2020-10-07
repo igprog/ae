@@ -1,0 +1,143 @@
+﻿<div>
+    <!-- ================ start banner area ================= -->
+    <section class="contact-banner-area" id="contact">
+        <div class="container h-100">
+            <div class="contact-banner">
+                <div class="text-center">
+                    <h1>Booking</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <h2>Booking</h2>
+            <hr />
+            <div ng-hide="sending" ng-if="!d.booking.response.isSent" class="row">
+                <div class="col-md-12 col-lg-12">
+                    <form name="myForm" class="row contact_form" id="contactForm" novalidate="novalidate">
+                        <div class="col-sm-4 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>First Name</label>
+                                    <input ng-model="d.booking.firstName" class="form-control" type="text">
+                                    <span ng-show="!validation.firstName" class="text-danger">First Name is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Last Name</label>
+                                    <input ng-model="d.booking.lastName" class="form-control" type="text">
+                                    <span ng-show="!validation.lastName" class="text-danger">Last Name is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Email</label>
+                                    <input ng-model="d.booking.email" class="form-control" type="email">
+                                    <span ng-show="!validation.email" class="text-danger">Email is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 gutters-19">
+                            <div class="form-group">
+                                <div>
+                                    <label>Choose apartment</label>
+                                </div>
+                                <div class="form-check form-check-inline" ng-repeat="x in d.accommodation">
+                                    <input ng-model="x.selected" class="form-check-input" type="checkbox" id="{{x.ap}}" value="{{x.selected}}">
+                                    <label class="form-check-label" for="{{x.ap}}">Apartment <span class="text-uppercase">{{x.code}}</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Arrival</label>
+                                    <input ng-model="d.booking.arrival" class="form-control" type="date">
+                                    <span ng-show="!validation.arrival" class="text-danger">Arrival is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Departure</label>
+                                    <input ng-model="d.booking.departure" class="form-control" type="date">
+                                    <span ng-show="!validation.departure" class="text-danger">Departure is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Adult</label>
+                                    <select ng-model="d.booking.adult">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                    <span ng-show="!validation.adult" class="text-danger">Adult is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 gutters-19">
+                            <div class="form-group">
+                                <div class="form-select-custom">
+                                    <label>Child</label>
+                                    <select ng-model="d.booking.child">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 gutters-19">
+                            <div class="form-group">
+                                <label>Note</label>
+                                <textarea ng-model="d.booking.note" class="form-control different-control" name="message" id="message" rows="5" placeholder="Enter Note"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="button-contact" ng-click="send(d.booking)"><span>Send Request</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div ng-if="sending" class="text-center p-5">
+                <i class="fa fa-circle-notch fa-spin fa-5x"></i>
+                <p>Sending...</p>
+            </div>
+            <div ng-if="d.booking.response.isSent"  class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">{{d.booking.response.msg}}</h5>
+                    <p class="card-text">{{d.booking.response.msg1}}.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <json-directive data="d" debug="config.debug" desc="'d'"></json-directive>
+    <json-directive data="g" debug="config.debug" desc="'g'"></json-directive>
+</div>
