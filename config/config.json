@@ -1,11 +1,45 @@
 ﻿{
-  "version": "1.0.1",
-  "date": "7.10.2020",
+  "version": "1.0.2",
+  "date": "8.10.2020",
   "year": 2021,
   "fromyear": 2020,
   "mindate": "-06-15",
-  "maxdate":  "-09-15",
+  "maxdate": "-09-15",
   "appname": "Apartments Elvira",
-  "debug": true
+  "debug": true,
+  "menu": [
+    {
+      "tpl": "home",
+      "desc": "Home"
+    },
+    {
+      "tpl": "about",
+      "desc": "About Us"
+    },
+    {
+      "tpl": "accommodation",
+      "desc": "Accommodation"
+    },
+    {
+      "tpl": "gallery",
+      "desc": "Gallery"
+    },
+    {
+      "tpl": "price",
+      "desc": "Price"
+    },
+    {
+      "tpl": "calendar",
+      "desc": "Calendar"
+    },
+    {
+      "tpl": "booking",
+      "desc": "Booking"
+    },
+    {
+      "tpl": "contact",
+      "desc": "Contact Us"
+    }
+  ]
 }
 

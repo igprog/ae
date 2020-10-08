@@ -136,6 +136,7 @@ angular.module('app', ['ui.router', 'ngStorage', 'pascalprecht.translate'])
     var getConfig = () => {
         $http.get('../config/config.json').then((response) => {
             $scope.config = response.data;
+            $rootScope.config = response.data;
             reloadPage();
         });
     };
@@ -157,22 +158,22 @@ angular.module('app', ['ui.router', 'ngStorage', 'pascalprecht.translate'])
 
     $scope.go = (x) => {
         $state.go(x);
-        $scope.d.currTpl = x;
+        $scope.g.currTpl = x;
     }
     $state.go('home');
 
     $scope.goApartment = (x) => {
         $state.go('accommodation', { apartment: 'a' + x });
-        $scope.d.currTpl = x;
+        $scope.g.currTpl = x;
     }
 
     $scope.goBooking = (ap, arr, dep, ad, ch) => {
         $state.go('booking', { apartment: ap, arrival: arr, departure: dep, adult: ad, child: ch });
-        $scope.d.currTpl = 'booking';
+        $scope.g.currTpl = 'booking';
     }
 
     $scope.active = (x) => {
-        return $scope.d.currTpl === x ? 'active' : '';
+        return $scope.g.currTpl === x ? 'active' : '';
     }
 
 }])
@@ -219,17 +220,6 @@ angular.module('app', ['ui.router', 'ngStorage', 'pascalprecht.translate'])
 }])
 
 .controller('aboutCtrl', ['$scope', '$http', '$rootScope', 'f', '$translate', function ($scope, $http, $rootScope, f, $translate) {
-    var data = {
-        info: []
-    }
-    $scope.d = data;
-
-    var load = (lang) => {
-        f.post('Info', 'Load', { lang: lang }).then((d) => {
-            $scope.d.info = d;
-        });
-    }
-    load('hr');
 
 }])
 
@@ -433,6 +423,18 @@ angular.module('app', ['ui.router', 'ngStorage', 'pascalprecht.translate'])
 }])
 
 /********** Directives **********/
+.directive('bannerDirective', function () {
+    return {
+        restrict: 'E',
+        scope: { tpl: '=' },
+        templateUrl: '../assets/partials/directive/banner.html',
+        controller: 'bannerCtrl'
+    };
+})
+.controller('bannerCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    $scope.desc = $rootScope.config.menu.find(a => a.tpl === $scope.tpl).desc;
+}])
+
 .directive('jsonDirective', function () {
     return {
         restrict: 'E',
@@ -441,7 +443,7 @@ angular.module('app', ['ui.router', 'ngStorage', 'pascalprecht.translate'])
         controller: 'jsonCtrl'
     };
 })
-.controller('jsonCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+.controller('jsonCtrl', ['$scope', function ($scope) {
     $scope.isShow = false;
     $scope.show = function () {
         $scope.isShow = !$scope.isShow;
