@@ -6,14 +6,13 @@
     <ng-include ng-if="g.apartment==='a0'" src="'../assets/partials/apartments.html'"></ng-include>
 
     <!-- ================ Explore section start ================= -->
-    <section ng-if="g.apartment!=='a0'" class="mt-5 section-margin--small">
+    <section ng-if="g.apartment!=='a0'" class="mt-5 mb-5">
         <div class="container">
-            <div class="section-intro pb-80px">
+            <div class="section-intro">
                 <div class="text-center pb-3">
                     <div class="section-intro__style">
                         <img src="../assets/img/home/bed-icon.png" alt="">
                     </div>
-                    <h2></h2>
                     <h2>Apartment <span class="text-uppercase">{{d.currApartment.code}}</span></h2>
                     <h5>{{d.currApartment.area}}m² | {{d.currApartment.floor}}</h5>
                 </div>
