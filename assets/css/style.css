@@ -538,7 +538,7 @@ button {
         margin-bottom: 45px; } }
   .home-banner-area {
     height: 500px;
-    background: url("../img/home/header-bg.jpg") center center no-repeat;
+    background: url("../img/home/header-bg.jpg") left center no-repeat;
     background-size: cover;
     position: relative;
     z-index: 1; }
