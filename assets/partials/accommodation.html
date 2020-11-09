@@ -16,35 +16,37 @@
                     <h2>Apartment <span class="text-uppercase">{{d.currApartment.code}}</span></h2>
                     <h5>{{d.currApartment.area}}m² | {{d.currApartment.floor}}</h5>
                 </div>
-                <div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <table>
-                                <tr>
-                                    <td><i class="fa fa-bed fa-2x"></i></td>
-                                    <td class="pl-2">{{d.currApartment.beds}} beds</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa fa-snowflake fa-2x"></i></td>
-                                    <td class="pl-2">A/C</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa fa-wifi fa-2x"></i></td>
-                                    <td class="pl-2">Wi-Fi</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa fa-water fa-2x"></i></td>
-                                    <td class="pl-2">Sea view</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="lead text-justify pt-2">{{d.currApartment.longdesc}}</p>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <table>
+                            <tr>
+                                <td><i class="fa fa-bed fa-2x"></i></td>
+                                <td class="pl-2">{{d.currApartment.beds}} beds</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-snowflake fa-2x"></i></td>
+                                <td class="pl-2">A/C</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-wifi fa-2x"></i></td>
+                                <td class="pl-2">Wi-Fi</td>
+                            </tr>
+                            <tr ng-if="d.currApartment.tv">
+                                <td><i class="fa fa-tv fa-2x"></i></td>
+                                <td class="pl-2">TV</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-water fa-2x"></i></td>
+                                <td class="pl-2">Sea view</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="lead text-justify pt-2">{{d.currApartment.longdesc}}</p>
                     </div>
                 </div>
             </div>
-            <div class="row pb-4">
+            <div class="row pt-3 pb-4">
                 <div class="col-md-6 col-xl-4 mb-5" ng-repeat="x in d.currApartment.images">
                     <div class="card card-explore">
                         <div>
